@@ -34,25 +34,25 @@
     ]
 </script>
 
-<style></style>
+<style></style> 
 
 <div class="bg-secondary w-full h-[100vh] overflow-y-auto relative">
     <NavBar />
     <div class="w-[95%] mx-auto rounded-xl flex flex-col mb-10 gap-5">
-        <div class="flex justify-between align-middle w-full h-auto gap-5">
+        <div class="flex flex-col md:flex-row justify-between w-full h-auto gap-5">
             <div class="w-full h-auto bg-white rounded-xl p-5 flex flex-col justify-between">
-                <div class="flex justify-between align-middle mb-10">
+                <div class="flex justify-between items-center mb-10">
                     <div class="flex flex-col">
                         <h1 class="font-bold mb-1"> Today's Sales </h1>
                         <p class="text-sm">Sales Summary</p>
                     </div>
-                    <button class="border border-[#C3D3E2] px-3 py-1 rounded-lg flex justify-center align-middle h-8">
+                    <button class="border border-[#C3D3E2] px-3 py-1 rounded-lg flex justify-center items-center h-8">
                         <Icon icon="bx:export" class="text-[#0F3659] text-xl mr-2 font-black"/>
                         <p class="text-[#0F3659] text-center text-sm font-medium">Export</p>
                     </button>
                 </div>
 
-                <div class="flex justify-between align-middle gap-3">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-3">
                     {#each Cards as card, index}
                         <div key={index} 
                         class={`
@@ -60,7 +60,7 @@
                         ${card.numbers == "300" && "bg-[#FFF4DE]"} 
                         ${card.numbers == "5" && "bg-[#DCFCE7]"} 
                         ${card.numbers == "8" && "bg-[#F3E8FF]"} 
-                        px-3 py-6 flex flex-col justify-center align-middle w-1/4 h-auto rounded-xl`}>
+                        px-3 py-6 flex flex-col justify-center items-center md:items-start w-full md:w-1/4 h-auto rounded-xl`}>
                             <div 
                                 class={`w-8 h-auto rounded-[50%] p-2 mb-2 
                                 ${card.numbers == "1k" && "bg-[#FA5A7D]"} 
@@ -77,39 +77,39 @@
                     {/each}
                 </div>
             </div>
-            <div class="w-3/5 h-auto bg-white rounded-xl p-5 flex flex-col justify-between">
+            <div class="w-full md:w-3/5 h-auto bg-white rounded-xl p-5 flex flex-col justify-between">
                 <h1 class="font-bold mb-5"> Visitor Insights </h1>
                 <img src="/chart.svg" alt="chart" class="w-full h-auto">
             </div>
         </div>
         <div class="flex flex-col w-full h-auto gap-5">
-            <div class="flex justify-between align-middle gap-5 w-auto h-auto">
-                <div class="bg-white w-[45%] rounded-xl p-5 h-[200] flex flex-col">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-5 w-auto h-auto">
+                <div class="bg-white w-full md:w-[45%] rounded-xl p-5 h-[200] flex flex-col">
                     <h1 class="font-bold mb-5"> Top Revenue </h1>
                     <BarChart />
                 </div>
-                <div class="flex justify-between align-middle gap-5 w-[55%] h-auto">
-                    <div class="bg-white w-1/2 rounded-xl p-5 h-[200] flex flex-col">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-5 w-full md:w-[55%] h-auto">
+                    <div class="bg-white w-full md:w-1/2 rounded-xl p-5 h-[200] flex flex-col">
                         <h1 class="font-bold mb-5"> Customer Satisfaction </h1>
                         <AreaChart />
                     </div>
-                    <div class="bg-white w-1/2 rounded-xl p-5 h-[200] flex flex-col">
+                    <div class="bg-white w-full md:w-1/2 rounded-xl p-5 h-[200] flex flex-col">
                         <h1 class="font-bold mb-5"> Target vs Reality </h1>
                         <LineChart />
                     </div>
                 </div>
             </div>
-            <div class="flex justify-between align-middle gap-5 h-72 w-full">
-                <div class="bg-white w-[45%] rounded-xl h-full p-5 flex flex-col">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-5 h-72 w-full">
+                <div class="bg-white w-full md:w-[45%] rounded-xl h-full p-5 flex flex-col">
                     <h1 class="font-bold mb-5"> Top Products </h1>
                     <img src="/chart-4.svg" alt="chart" class="w-full h-auto">
                 </div>
-                <div class="flex justify-between align-middle gap-5 w-[55%] h-full">
-                    <div class="bg-white w-1/2 rounded-xl p-5 h-full flex flex-col">
-                        <h1 class="font-bold mb-16"> Sales Mapping by Country </h1>
+                <div class="flex flex-col md:flex-row justify-between items-center gap-5 w-full md:w-[55%] h-full">
+                    <div class="bg-white w-full md:w-1/2 rounded-xl p-5 h-full flex flex-col">
+                        <h1 class="font-bold mb-5 md:mb-16"> Sales Mapping by Country </h1>
                         <img src="/chart-5.svg" alt="chart" class="w-full h-auto">
                     </div>
-                    <div class="bg-white w-1/2 rounded-xl p-5 h-full justify-between flex flex-col">
+                    <div class="bg-white w-full md:w-1/2 rounded-xl p-5 h-full justify-between flex flex-col">
                         <h1 class="font-bold mb-5"> Volume vs Service Level </h1>
                         <img src="/chart-6.svg" alt="chart" class="w-full h-auto">
                     </div>
